@@ -3,7 +3,7 @@
  ***********/
 var cursor = require('ansi')(process.stdout);
 var spinner = (function() {
-	var sequence = ["|","/","-","\\"]; //[".", "o", "0", "@", "*"];
+	var sequence = ["|","/","\u0336","\\"]; 
 	var index = 0;
 	var timer;
 	var opts = {};
@@ -15,7 +15,7 @@ var spinner = (function() {
 			cursor.hide();
 		}
 		
-		inv = inv || 250;
+		inv = inv || 50;
 		index = 0;
 		process.stdout.write(sequence[index]);
 		timer = setInterval(function() {
